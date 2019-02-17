@@ -14,7 +14,7 @@ setTimeout(function() {
 /* ----------------------------------------------------------------------- */
 
 $(document).ready(function() {
-
+    console.log('preloader');
 
     setTimeout(function () {
 
