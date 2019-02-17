@@ -4,11 +4,10 @@
         <div class="rows">
             [[!pdoPage?=
                 &element=`msProducts`
-                &parents=`[[*id:is=`5`:then=`7`:else=`[[+parentID:empty=`[[*id]]`:else=`7`]]`]]`
+                &parents=`1`
                 &ajaxMode=`button`
                 &limit=`15`
                 &tpl = `CatalogItem`
-                &where=`[[*id:is=`5`:then=`{"Data.old_price:>":"Data.price"}`]]`
             ]]
         </div>
         [[!+page.nav]]
