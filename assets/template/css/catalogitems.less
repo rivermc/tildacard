@@ -1,0 +1,251 @@
+@import "arg.less";
+@import "func.less";  
+
+//-------------------------------------------------------------------------//
+    // Catalog Items //
+//-------------------------------------------------------------------------//
+& .catalog__main_wrap { 
+
+  & #pdopage {
+
+    & .rows {
+      .flex();
+      justify-content: space-between;      
+    }
+  }
+
+  & .btn-more {
+    .animation();
+    background: @colorBrown;
+    color: @colorWhite;
+    font-family: @fontGeom;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 30px;
+    font-size: 13pt;
+    border: 0;
+    width: auto;
+    cursor: pointer;
+
+    &:hover {
+      background: @colorBlackLight;
+    }
+  }
+
+  & .catalog__main_item {
+    .cols(3);
+    .animation();
+    height: 270px;
+    position: relative;
+    
+    @media @t {
+      height: auto;
+      margin-bottom: 20px;
+    }
+    @media @m {
+      .cols(7.5);
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 5px -30px @colorBlack;
+
+      & .main__item_invisible {
+        opacity: 1;
+        
+        @media @d, @dBig {
+          padding: 10px 5px 10px;
+
+        }
+      }
+      & .main__item_visible {
+        border: 1px solid @colorBrown;
+        border-bottom: 0;
+        
+        @media @d, @dBig {
+          padding: 20px 5px 0;
+        }
+      }
+      & .main__item_toplink {
+        opacity: 1;
+      }
+      & .main__item_notification {
+        right: 40px;
+      }
+    }
+
+    & .main__item_toplink {
+      .animation();
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: 0;
+      z-index: 100;
+
+      & a {
+        .animation();
+        background: @colorBrown;
+        display: table;
+        width: 36px;
+        height: 36px;
+        padding: 4px; 
+        
+        &:hover {
+          background: @colorBlack;
+        }
+
+        & svg {
+          max-width: 100%;
+
+          & path {
+            fill: @colorWhite; 
+          }
+        }
+      }
+    }
+    
+    & .main__item_notification {
+      .animation();
+      position: absolute;
+      top: 0;
+      right: -10px;
+      
+      & p {
+        background: @colorRedLight;
+        color: @colorWhite;
+        font-family: @fontGeomBold;
+        text-transform: uppercase;
+        font-size: 9pt;
+        padding: 4px 5px 2px;
+        display: table;
+        margin: 2px 0 0 auto;
+      }
+    }
+
+    & .main__item_visible {
+      .animation();
+      border: 1px solid @colorGray;
+      padding: 20px 5px 10px;
+      
+      @media @d {
+        padding: 20px 5px 10px;
+      }
+      @media @t {
+        border-bottom: 0;
+      }
+      @media @m {
+        border-bottom: 0;
+      }
+
+      & .main__item_img {
+        margin-bottom: 20px;
+        text-align: center;
+
+        & a {
+
+          & img {
+            height: 150px;
+          }
+        }
+      }
+
+      & .main__item_title { 
+
+        & h2 {
+          font-size: 9pt;
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+    }
+
+    & .main__item_invisible {
+      border: 1px solid @colorBrown;
+      background: @colorWhite;
+      display: none;
+      opacity: 0;
+      border-top: 0;
+      padding: 0 15px 10px;
+      position: relative;
+      z-index: 100;
+      
+      @media @t, @m {
+        border: 1px solid @colorGray;
+        border-top: 0;
+        display: block;
+        opacity: 1;
+        padding: 0 10px 10px;
+      }
+
+      & .main__item_price {
+        .flex();
+        justify-content: space-between;
+        margin-bottom: 20px;
+        
+        @media @d {
+          padding: 0 15px;
+        }
+
+        & p {
+          .cols(6);
+          color: @colorBrown;
+          font-size: 9pt;
+          
+          @media @t, @m {
+            .cols(16);
+          }
+
+          &.price {
+            .cols(10);
+            color: @colorBlack;
+            font-family: @fontGeomBold;
+            font-size: 11pt;
+            
+            @media @d {
+              .cols(16);
+            }
+            @media @t, @m {
+              .cols(16);
+              font-size: 10pt;
+            }
+          }
+
+        }
+      }
+
+      & .main__item_link { 
+
+        & a {
+          .animation();
+          background: @colorBrown;
+          color: @colorWhite;
+          display: table;
+          margin: 0 auto;
+          text-align: center;
+          padding: 10px 20px;
+          font-size: 11pt;
+          
+          @media @d {
+            font-size: 10pt;
+            padding: 5px 10px;
+          }
+          @media @t {
+            font-size: 10pt;
+            padding: 5px 10px;
+          }
+          @media @m {
+            font-size: 9pt;
+            padding: 5px 10px;
+          }
+
+          &:hover {
+            background: @colorBlackLight;
+          }
+
+        }
+      }
+    }
+  }
+}
