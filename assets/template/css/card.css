@@ -33,6 +33,16 @@
 .rub {
   font-family: 'rub' !important;
 }
+html {
+  overflow-x: hidden;
+}
+html.noscroll {
+  overflow: hidden;
+}
+body {
+  font-family: 'Geom', sans-serif;
+  overflow-x: hidden;
+}
 .container {
   padding: 0 15px;
   margin: 0 auto;

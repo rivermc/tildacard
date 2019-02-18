@@ -1,8 +1,5 @@
 {foreach $options as $name => $values}
-    <div class="product__item_prop">
-        <p>{('ms2_product_' ~ $name) | lexicon}:</p>
         {foreach $values as $value}
-            <p>{$value}</p>
+            {$value}
         {/foreach}
-    </div>
 {/foreach}

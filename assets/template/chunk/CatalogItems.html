@@ -5,9 +5,19 @@
             [[!pdoPage?=
                 &element=`msProducts`
                 &parents=`1`
-                &ajaxMode=`button`
-                &limit=`15`
+                &limit=`6`
+                &includeTVs = `MetaDescription`
                 &tpl = `CatalogItem`
+                &tplPageWrapper = `@INLINE <div class="pagination"><ul>[[+first]][[+prev]][[+pages]][[+next]][[+last]]</ul></div>`
+                &tplPageFirst = `@INLINE <li class="control prev first"><a class="nopreload" href="[[+href]]">Первая</a></li>`
+                &tplPageLast = `@INLINE <li class="control next last"><a  class="nopreload" href="[[+href]]">Последняя</a></li>`
+                &tplPage = `@INLINE <li><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
+                &tplPageActive = `@INLINE <li class="active"><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
+                &tplPagePrev = `@INLINE <li class="control prev"><a class="nopreload" href="[[+href]]">Назад</a></li>`
+                &tplPageNext = `@INLINE <li class="control next"><a  class="nopreload" href="[[+href]]">Вперед</a></li>`
+                &tplPageNextEmpty = `@INLINE `
+                &tplPagePrevEmpty = `@INLINE `
+                &tplPageFirstEmpty = `@INLINE `
             ]]
         </div>
         [[!+page.nav]]
