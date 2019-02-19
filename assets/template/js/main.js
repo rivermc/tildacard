@@ -1,41 +1,16 @@
 $(document).ready(function() {
-
-    /*$(document).on('click','.main__item_title', function(e){
-        e.preventDefault();
     
-        // Вставляем полученный контент в HTML блок с id="content"
-        $('.expertise-text').css('opacity', '0').delay(400).queue(function(next){
-            $('.expertise-text').load("/assets/template/php/getCard.php",
-                {
-                    id: 6,
-                    snippet: 'msProducts',
-                    action: 'getCard',
-                    tpl: 'Item'
-                },
-                function(response) {
-                    $('.expertise-text').css('opacity', '1');
-                    next();
-                });
-    
-        })
-    });*/
-    
-    function getCard() {
-        // Вставляем полученный контент в HTML блок с id="content"
-        $('.expertise-text').css('opacity', '0').delay(400).queue(function(next){
-            $('.expertise-text').load("/assets/template/php/getCard.php",
-                {
-                    id: 6,
-                    snippet: 'GetMyChunk',
-                    action: 'getCard',
-                    tpl: 'Item'
-                },
-                function(response) {
-                    $('.expertise-text').css('opacity', '1');
-                    next();
-                });
-
-        })
+    function getCard(itemID) {
+        $('.expertise-text').load("/assets/template/php/getCard.php",
+            {
+                id: itemID,
+                snippet: 'GetMyChunk',
+                action: 'getCard',
+                tpl: 'Item'
+            },
+            function(response) {
+                //console.log('getCard response: ' + response);
+            });
     }
     
     $('.popup-btn').magnificPopup({
@@ -45,8 +20,8 @@ $(document).ready(function() {
     
         callbacks: {
             beforeOpen: function() {
-                console.log('BeforeOpen');
-                getCard();
+                var itemID = $(this.st.el).data('id');
+                getCard(itemID);
     
             },
             open: function() {
