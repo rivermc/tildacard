@@ -192,6 +192,7 @@ body {
 .catalog__main_wrap #pdopage .rows {
   display: flex;
   flex-wrap: wrap;
+  transition: all 0.4s linear;
   justify-content: space-between;
 }
 .catalog__main_wrap .btn-more {
