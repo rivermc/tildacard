@@ -17,7 +17,7 @@ $(document).ready(function() {
                     beforeOpen: function() {
                         var itemID = $(this.st.el).data('id');
 
-                        $('.expertise-text').load("/assets/template/php/getCard.php",
+                        $('.card_popup').load("/assets/template/php/getCard.php",
                             {
                                 id: itemID,
                                 snippet: 'GetMyChunk',
@@ -31,6 +31,10 @@ $(document).ready(function() {
                     },
                     open: function() {
                         $('html').css('overflow', 'auto');
+                        setTimeout(function(){
+                            console.log('open');
+                            miniShop2.Gallery.initialize();                            
+                        },1500);
                     },
                     close: function() {
 
