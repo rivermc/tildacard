@@ -1,3 +1,117 @@
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  outline: none;
+}
+html {
+  height: 101%;
+  margin: 0 !important;
+}
+/* always display scrollbars */
+body {
+  font-size: 62.5%;
+  line-height: 1.2em;
+  font-family: sans-serif;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+input {
+  outline: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  border: 0;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a,
+b,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+li,
+td {
+  letter-spacing: 0;
+  line-height: 1.4em;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2em;
+}
+*:focus,
+*:hover,
+*:active,
+a:focus {
+  outline: 0;
+  text-decoration: none;
+}
+s {
+  text-decoration: line-through;
+}
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+a:focus {
+  background: transparent;
+  outline: 0;
+}
+a:active {
+  background: transparent;
+  outline: 0;
+}
+a:visited {
+  background: transparent;
+  outline: 0;
+}
+html {
+  font-size: 10pt;
+}
 @font-face {
   font-family: 'Geom';
   src: url('../fonts/Geom.eot');
@@ -86,78 +200,108 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
   }
 }
-.product {
-  background: #ffffff;
-}
-.product .product__item {
-  padding: 20px 0;
-}
-.product .product__item .product__item_wrap .product__item_top {
+.pagination {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-beetwen;
-  margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+  margin: 20px 0 !important;
 }
-.product .product__item .product__item_wrap .product__item_top .item_top_left {
-  width: 87.5%;
-}
-.product .product__item .product__item_wrap .product__item_top .item_top_left h2 {
-  font-size: 20pt;
-  text-transform: uppercase;
-  border-bottom: 2px solid #53d3c1;
-  display: table;
-  font-weight: 100;
-  margin-bottom: 10px;
-  padding-bottom: 4px;
-}
-.product .product__item .product__item_wrap .product__item_top .item_top_left p {
-  font-size: 14pt;
-}
-.product .product__item .product__item_wrap .product__item_top .item_top_right {
-  width: 12.5%;
-}
-.product .product__item .product__item_wrap .product__item_top .item_top_right p {
-  text-align: right;
-  font-size: 14pt;
-}
-.product .product__item .product__item_wrap .product__item_top .item_top_right p:first-child {
-  margin-bottom: 10px;
-  padding-bottom: 6px;
-}
-.product .product__item .product__item_wrap .product__item_img {
-  margin: 20px 0;
-}
-.product .product__item .product__item_wrap .product__item_img .msGallery {
+.pagination ul {
   display: flex;
   flex-wrap: wrap;
-  max-height: 420px;
-  overflow: hidden;
   align-items: center;
 }
-.product .product__item .product__item_wrap .product__item_content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-beetwen;
+.pagination ul li {
+  text-align: center;
+  margin: 0 5px !important;
+  list-style-type: none !important;
 }
-.product .product__item .product__item_wrap .product__item_content .item_content_left {
-  width: 62.5%;
-}
-.product .product__item .product__item_wrap .product__item_content .item_content_left .item_content_description p,
-.product .product__item .product__item_wrap .product__item_content .item_content_left .item_content_description li {
+.pagination ul li span {
+  font-family: 'GeomMed', sans-serif;
   font-size: 12pt;
-  line-height: 1.4em;
-  margin-bottom: 10px;
 }
-.product .product__item .product__item_wrap .product__item_content .item_content_left .item_content_description h2,
-.product .product__item .product__item_wrap .product__item_content .item_content_left .item_content_description h3,
-.product .product__item .product__item_wrap .product__item_content .item_content_left .item_content_description h4 {
-  font-size: 14pt;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .pagination ul li span {
+    font-size: 11pt;
+  }
 }
-.product .product__item .product__item_wrap .product__item_content .item_content_right {
-  width: 34.375%;
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .pagination ul li span {
+    font-size: 10pt;
+  }
 }
-.product .product__item .product__item_wrap .product__item_content .item_content_right .sticky_block .item_content_contact {
+@media only screen and (max-width: 767px) {
+  .pagination ul li span {
+    font-size: 8pt;
+  }
+}
+.pagination ul li a {
+  font-family: 'GeomBold', sans-serif;
+  font-size: 12pt;
+  padding: 5px;
+  width: 25px;
+  height: 25px;
+  display: table;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .pagination ul li a {
+    font-size: 11pt;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .pagination ul li a {
+    font-size: 10pt;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pagination ul li a {
+    padding: 0;
+    width: 15px;
+    height: 15px;
+    font-size: 8pt;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pagination ul li.first,
+  .pagination ul li.last {
+    display: none;
+  }
+}
+.pagination ul li.next {
+  width: 70px;
+}
+@media only screen and (max-width: 767px) {
+  .pagination ul li.next {
+    width: auto !important;
+  }
+}
+.pagination ul li.next:hover svg {
+  transform: translateX(20px);
+}
+.pagination ul li.next a {
+  margin: 0  auto 0 0;
+}
+.pagination ul li.next svg {
+  transition: all 0.4s linear;
+}
+.pagination ul li.prev {
+  width: 70px;
+}
+@media only screen and (max-width: 767px) {
+  .pagination ul li.prev {
+    width: auto !important;
+  }
+}
+.pagination ul li.prev a {
+  margin: 0 0 0 auto;
+}
+.pagination ul li.active {
   background: #53d3c1;
+}
+.pagination ul li.active a {
+  color: #ffffff;
+}
+.pagination ul li.disabled {
+  display: none;
 }

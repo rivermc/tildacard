@@ -1,4 +1,3 @@
- 
 .fontLoad (@name, @file) {
 	font-family: @name;
 	src: url('../fonts/@{file}.eot');
@@ -23,6 +22,7 @@
 @colorRedLight: #d9534f;
 @colorGray: #dddddd;
 @colorGrayDark: #999999;
+@colorBlue: #53d3c1;
 
 
 @fontGeom: ~"'Geom', sans-serif";
@@ -57,4 +57,30 @@
 .rub {
     font-family: 'rub' !important;
 }
-  
+
+
+
+html {
+	overflow-x: hidden;
+
+	&.noscroll {
+		overflow: hidden;
+	}
+}
+
+body {
+	font-family: @fontGeom;
+	overflow-x: hidden;
+
+	&::-webkit-scrollbar {
+		width: 7px;
+	}
+	&::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+		background-color: @colorBlack;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: @colorBlue;
+		outline: 1px solid slategrey;
+	}
+}

@@ -1,0 +1,74 @@
+<div id="msProduct" class="product">
+    <div class="container container_popup">
+        <div class="product__item">
+            <div class="product__item_wrap">
+                <div class="product__item_top">
+                    <div class="item_top_left">
+                        <h2>[[+pagetitle]]</h2>
+                        <p>
+                            [[msOptions?options=`code`
+                                &tpl=`ProductOptionsText`
+                                &product=`[[+id]]`
+                            ]]
+                        </p>
+                    </div>
+                    <div class="item_top_right">
+                        <p>
+                            [[msOptions?options=`square`
+                                &tpl=`ProductOptionsText`
+                                &product=`[[+id]]`
+                            ]]
+                            <span>м2</span>
+                        </p>
+                        <p>
+                            [[msOptions?options=`city`
+                                &tpl=`ProductOptionsText`
+                                &product=`[[+id]]`
+                            ]]
+                        </p>
+                    </div>
+                </div>
+                <div class="product__item_img">
+                    [[msGallery?
+                        &product = `[[+id]]`
+                        &limit = `20`
+                        &tpl=`Fotorama`
+                    ]]
+                </div>
+                <div class="product__item_content">
+                    <div class="item_content_left">
+                        <div class="item_content_description">
+                            <p>[[+content]]</p>
+                        </div>
+                        <div class="item_content_tech">
+                            <img src="[[+TechImage]]" alt="Технические характеристики дома">
+                        </div>
+                        <div class="item_content_maps">
+                            [[+MapsImage]]
+                        </div>
+                    </div>
+                    <div class="item_content_right">
+                        <div class="sticky_block">
+                            <div class="item_content_contact">
+                                <h3>[[+pagetitle]]</h3>
+                                <div class="item_content_price">
+                                    <p class="new_price">[[+price]] <span>&euro;</span></p>
+                                    <p class="old_price">[[+old_price]] <span>&euro;</span></p>
+                                </div>
+                                <div class="item_content_form">
+                                    <form action="post">
+                                        <input type="text"> 
+                                        <button type="submit">Заказать звонок</button>
+                                    </form>
+                                </div>
+                                <div class="item_content_messeger">
+                                    [[+Messager]]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
