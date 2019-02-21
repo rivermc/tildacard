@@ -1,52 +1,10 @@
 $(document).ready(function() {
     
-    class PopupCard {
-
-        constructor() {
-            this.item = $('.popup-btn');
-        }
-        
-        getPopup() {
-            var self_this = this.item;
-            self_this.magnificPopup({
-                type: 'inline',
-                preloader: false,
-                removalDelay: 350,
-
-                callbacks:  {
-                    beforeOpen: function() {
-                        var itemID = $(this.st.el).data('id');
-
-                        $('.card_popup').load("/assets/template/php/getCard.php",
-                            {
-                                id: itemID,
-                                snippet: 'msProducts',
-                                action: 'getCard',
-                                tpl: 'Item'
-                            },
-                            function(response) {
-                                //console.log('getCard response: ' + response);
-                            });
-
-                    },
-                    open: function() {
-                        $('html').css('overflow', 'auto');
-                        setTimeout(function(){
-                            console.log('open');
-                            miniShop2.Gallery.initialize();                            
-                        },1500);
-                    },
-                    close: function() {
-
-                    }
-                }
-            });
-        }
-    }
-
+    // popupcard js init
     var popupcard =  new PopupCard();
     popupcard.getPopup();
 
+    // ajax page reload plugin js init
     pdoPage.callbacks['before'] = function() {
         console.log('Конфиг перед загрузкой!');
         $('#pdopage .rows').css({'opacity': 0});
@@ -58,7 +16,5 @@ $(document).ready(function() {
         miniShop2.Gallery.initialize();
         $('#pdopage .rows').css({'opacity': 1});
     }
-    
-//miniShop2.Gallery.initialize();
 
 });
