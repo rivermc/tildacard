@@ -1,16 +1,13 @@
-
 <?php
 
 // Если запрос не AJAX или не передано действие, выходим
 if ($_SERVER['HTTP_X_REQUESTED_WITH'] != 'XMLHttpRequest' || empty($_REQUEST['action'])) {exit();}
 
 
-
 $action = $_REQUEST['action'];
 $snippet = $_REQUEST['snippet'];
 $tpl = $_REQUEST['tpl'];
 $id = $_REQUEST['id'];
-
 
 
 define('MODX_API_MODE', true);
@@ -36,17 +33,22 @@ switch ($action) {
         };
         
         $runParams = array(
-           'docId' => $id,
-           'chunk' => $tpl
+           'resources' => $id,
+           'chunk' => $tpl,
+           'includeTVs' => 'TechImage',
+           'parents' => '1',
+           'tpl' => $tpl,
+           'includeContent' => '1'
         );
         
         $modx->log(1, print_r($runParams, 1));
+               
+        $output = $modx->runSnippet($snippet, $runParams);
         
-        //$object = $modx->getObject('modResource',$id);        
-        $output = $modx->runSnippet($snippet, $runParams);        
-        //$output = $modx->getChunk($tpl, $runParams);        
-        
-        $modx->log(1, print_r($output, 1));
+                
+        //$output = $modx->getChunk($tpl, $runParams);
+        //$object = $modx->getObject('modResource',$id); 
+        //$modx->log(1, print_r($output, 1));
         
         
         // Парсим теги MODX
@@ -54,7 +56,6 @@ switch ($action) {
         $modx->getParser()->processElementTags('', $output, false, false, '[[', ']]', array(), $maxIterations);
         $modx->getParser()->processElementTags('', $output, true, true, '[[', ']]', array(), $maxIterations);*/
 }
-
 
 @session_write_close();
 exit($output);

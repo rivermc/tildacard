@@ -1,64 +1,71 @@
 <div id="msProduct" class="product">
-    <div id="msProduct" class="product">
-        <div class="product__item">
-            <div class="product__item_wrap">
-                <div class="product__item_left">
-                    <div class="product__item_img">
-                        [[msGallery?
-                            &product = `[[+id]]`
-                            &limit = `20`
-                            &tpl=`CatalogGallery`
+    <div class="product__item">
+        <div class="product__item_wrap">
+            <div class="product__item_top">
+                <div class="item_top_left">
+                    <h1>[[+pagetitle]]</h1>
+                    <p>
+                        [[msOptions?options=`code`
+                            &tpl=`ProductOptionsText`
+                            &product=`[[+id]]`
                         ]]
-                    </div>
-                    <div class="product__item_description">
-                        <p>[[*introtext]]</p>
-                    </div>
-                    <div class="product__item_size">
-                        <h2>Размеры кресла</h2>
+                    </p>
+                </div>
+                <div class="item_top_right">
+                    <p>
                         [[msOptions?options=`square`
                             &tpl=`ProductOptionsText`
                             &product=`[[+id]]`
                         ]]
+                    </p>
+                    <p>
+                        [[msOptions?options=`city`
+                            &tpl=`ProductOptionsText`
+                            &product=`[[+id]]`
+                        ]]
+                    </p>
+                </div>
+            </div>
+            <div class="product__item_img">
+                [[msGallery?
+                    &product = `[[+id]]`
+                    &limit = `20`
+                    &tpl=`CatalogGallery`
+                ]]
+            </div>
+            <div class="product__item_content">
+                <div class="item_content_left">
+                    <div class="item_content_description">
+                        <p>[[+content]]</p>
+                    </div>
+                    <div class="item_content_tech">
+                        <img src="[[+TechImage]]" alt="Технические характеристики дома">
+                    </div>
+                    <div class="item_content_maps">
+                        [[+MapsImage]]
                     </div>
                 </div>
-                <div class="product__item_right">
-                    <form class="ms2_form product__item_form" method="post">
-                        <div class="product__item_price_block">
-                            <input type="number" name="count" id="product_price" hidden="hidden" class="input-sm form-control" value="1"/>
-                            <div class="product__item_price">
-                                <p class="product_price_wrap">Цена: <span id="price">[[+price]]</span> руб.</p>
-                                <p class="notification_price">в зависимости от <span>комплектации</span></p>
+                <div class="item_content_right">
+                    <div class="sticky_block">
+                        <div class="item_content_contact">
+                            <h2>[[+pagetitle]]</h2>
+                            <div class="item_content_price">
+                                <p class="new_price">[[+price]]</p>
+                                <p class="old_price">[[+old_price]]</p>
                             </div>
-                            <div class="product__item_button">
-                                <button type="submit" class="btn btn-default" name="ms2_action" value="cart/add">Купить</button>
-                                [[msMiniCart?
-                                    &tpl = `MiniCartPrice`
-                                ]]
+                            <div class="item_content_form">
+                                <form action="post">
+                                    <input type="text"> 
+                                    <button type="submit">Заказать звонок</button>
+                                </form>
+                            </div>
+                            <div class="item_content_messeger">
+                                [[+Messager]]
                             </div>
                         </div>
-                        <div class="product__item_properties">
-                            <h2>Характеристики</h2>
-                            <input type="hidden" name="id" value="[[*id]]"/>
-
-                            <div class="product__item_prop">
-                                <p>Артикул:</p>
-                                <p>[[+article]]</p>
-                            </div>
-
-
-                            [[msOptions?options=`city`
-                                &tpl=`ProductOptionsText`
-                                &product=`[[+id]]`
-                            ]]
-                            <input type="text" hidden="hidden" name="originalPrice" id="originalPrice" value="[[+price]]">
-                            <input type="text" hidden="hidden"  name="priceItem" id="priceItem" value="[[+price]]">
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-</div>  
-
+</div>

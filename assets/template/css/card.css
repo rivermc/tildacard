@@ -75,6 +75,9 @@ body {
     width: 100%;
   }
 }
+.product {
+  background: #ffffff;
+}
 .product .product__item .product__item_wrap {
   display: flex;
   flex-wrap: wrap;

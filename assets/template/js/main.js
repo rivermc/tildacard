@@ -20,7 +20,7 @@ $(document).ready(function() {
                         $('.card_popup').load("/assets/template/php/getCard.php",
                             {
                                 id: itemID,
-                                snippet: 'GetMyChunk',
+                                snippet: 'msProducts',
                                 action: 'getCard',
                                 tpl: 'Item'
                             },
