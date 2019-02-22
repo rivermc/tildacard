@@ -6,10 +6,21 @@
 // Product Item //  
 //-------------------------------------------------------------------------//
 
-
-& .product {
+.mfp-content {
+  max-width: 90%;  
+}
+.card_popup {
+  .animation();
+  opacity: 0;
+}
+.product#msProduct {
   background: @colorWhite;
-
+  margin: 20px auto;
+  
+  & .container_popup {
+    max-width: 100%;
+  }
+  
   & .product__item {
     padding: 20px 0;
 
@@ -67,7 +78,7 @@
 
       & .product__item_content {
         .flex();
-        justify-content: space-beetwen;
+        justify-content: space-between;
 
         & .item_content_left {
           .cols(10);
@@ -105,38 +116,95 @@
 
             & .item_content_contact {
               background: @colorBlue;
+              padding: 20px;
+              box-shadow: 5px 5px 30px -5px @colorBlack;
 
               & h3 {
-
+                font-size: 14pt;
+                text-transform: uppercase;
+                border-bottom: 2px solid @colorBlack;
+                font-weight: 100;
+                margin-bottom: 14px;
+                padding-bottom: 4px;
               }
 
               & .item_content_price {
+                .flex();
+                justify-content: space-between;
+                margin: 20px 0;
+                
+                & p {
+                  font-size: 14pt;
+                  position: relative;
+                  
+                  &.new_price {
 
-                & p.new_price {
+                  }
+                  
+                  &.old_price {
+                    color: @colorRed;
+                    text-decoration: none;
+                    text-align: right;
+                    display: table;
+                    
+                    &:before {
+                      background: @colorRed;
+                      content: '';
+                      position: absolute;
+                      top: 45%;
+                      width: 100%;
+                      transform: rotate(-5deg);
+                      height: 2px;
+                    }
 
+                  }
+                  
                 }
 
-                & p.old_price {
-
-                }
               }
 
               & .item_content_form {
+                margin: 20px 0;
 
                 & form {
 
                   & input {
-
+                    color: @colorBlack;
+                    border: 0;
+                    padding: 14px;
+                    width: 100%;
+                    margin: 0 0 10px 0;
+                    border-radius: 20px;
+                    font-size: 11pt;
                   }
 
                   & button {
+                    .animation();
+                    background: @colorRed;
+                    color: @colorWhite;
+                    padding: 10px 25px 8px;
+                    display: table;
+                    margin: 0 auto;
+                    font-size: 13pt;
+                    border: 0;
+                    border-radius: 20px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+
+                    &:hover {
+                      background: @colorBlack;
+                      color: @colorWhite;
+                    }
 
                   }
                 }
               }
 
-              & .item_content_messeger {
-
+              & .item_content_messenger {
+                
+                & .title {
+                  font-size: 12pt;
+                }
               }
             }
           }

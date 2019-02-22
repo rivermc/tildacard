@@ -30,10 +30,12 @@ class PopupCard {
                 open: function() {
                     $('html').css('overflow', 'hidden');
                     setTimeout(function(){
+                        $('.card_popup').css('opacity', 1);
                         miniShop2.Gallery.initialize();
                     },1000);
                 },
                 close: function() {
+                    $('.card_popup').css('opacity', 0);
                     $('html').css('overflow', 'auto');
                 }
             }

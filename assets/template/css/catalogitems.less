@@ -16,25 +16,6 @@
     }
   }
 
-  & .btn-more {
-    .animation();
-    background: @colorBrown;
-    color: @colorWhite;
-    font-family: @fontGeom;
-    display: table;
-    margin: 0 auto;
-    text-align: center;
-    padding: 10px 30px;
-    font-size: 13pt;
-    border: 0;
-    width: auto;
-    cursor: pointer;
-
-    &:hover {
-      background: @colorBlackLight;
-    }
-  }
-
   & .catalog__main_item {
       .cols(5);
       border: 2px solid @colorBlue;
@@ -81,6 +62,7 @@
       & h2 {
         font-size: 13pt;
         text-transform: uppercase;
+        font-weight: 100;
       }
     }
 
@@ -101,6 +83,7 @@
         .cols(8);
 
         & p {
+          color: @colorRed;
           position: relative;
           text-align: left;
           font-size: 14pt;
@@ -113,7 +96,7 @@
             top: 45%;
             width: 100%;
             transform: rotate(-5deg);
-            height: 3px;
+            height: 2px;
           }
         }
       }
@@ -135,10 +118,12 @@
         .animation();
         background: @colorBlue;
         color: @colorWhite;
-        padding: 10px 25px;
+        padding: 10px 25px 7px;
         display: table;
         margin: 0 auto;
-        font-size: 14pt; 
+        font-size: 12pt;
+        border-radius: 20px;
+        text-transform: uppercase;
 
         &:hover {
           background: @colorBlack;
