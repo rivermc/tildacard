@@ -1,6 +1,3 @@
-@import "arg.less";
-@import "func.less";
-
 
 //-------------------------------------------------------------------------//
 // Product Item //  
@@ -13,6 +10,7 @@
   .animation();
   opacity: 0;
 }
+
 .product#msProduct {
   background: @colorWhite;
   margin: 20px auto;
@@ -21,6 +19,21 @@
     max-width: 100%;
   }
   
+  & .close_button_popup {
+    position: fixed;
+    right: 35px;
+    cursor: pointer;
+    
+    & img {
+      .animation();
+      height: 30px;
+      width: 30px;
+      
+      &:hover {
+        transform: scale(1.2, 1.2);
+      }
+    }
+  }
   & .product__item {
     padding: 20px 0;
 
@@ -113,11 +126,19 @@
           .cols(5.5);
 
           & .sticky_block {
+            position: relative;
+            top: 10px;
+            
+            &.fixed {
+              position: fixed;
+              top: 10px;
+            }
 
             & .item_content_contact {
               background: @colorBlue;
               padding: 20px;
               box-shadow: 5px 5px 30px -5px @colorBlack;
+              max-width: 360px;
 
               & h3 {
                 font-size: 14pt;
