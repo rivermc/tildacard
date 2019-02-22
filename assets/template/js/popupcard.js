@@ -9,7 +9,6 @@ class PopupCard {
         self_this.magnificPopup({
             type: 'inline',
             preloader: false,
-            removalDelay: 350,
 
             callbacks:  {
                 beforeOpen: function() {
@@ -32,6 +31,7 @@ class PopupCard {
                     setTimeout(function(){
                         $('.card_popup').css('opacity', 1);
                         miniShop2.Gallery.initialize();
+                        stickyInit();
                     },1000);
                 },
                 close: function() {
