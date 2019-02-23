@@ -16,10 +16,12 @@ class PopupCard {
 
                     $('.card_popup').load("/assets/template/php/getCard.php",
                         {
-                            id: itemID,
-                            snippet: 'msProducts',
                             action: 'getCard',
-                            tpl: 'Item'
+                            snippet: 'msProducts',
+                            parents: 1,
+                            id: itemID,
+                            tpl: 'Item',
+                            tv: 'TechImage, Widget'
                         },
                         function(response) {
                             //console.log('getCard response: ' + response);
@@ -35,7 +37,7 @@ class PopupCard {
                     },1000);
                 },
                 close: function() {
-                    $('.card_popup').css('opacity', 0);
+                    $('.card_popup').css('opacity', 0).html('');
                     $('html').css('overflow', 'auto');
                 }
             }

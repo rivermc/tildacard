@@ -8,6 +8,8 @@ $action = $_REQUEST['action'];
 $snippet = $_REQUEST['snippet'];
 $tpl = $_REQUEST['tpl'];
 $id = $_REQUEST['id'];
+$tv = $_REQUEST['tv'];
+$parents = $_REQUEST['parents'];
 
 
 define('MODX_API_MODE', true);
@@ -22,6 +24,8 @@ $modx->log(1, print_r($action, 1));
 $modx->log(1, print_r($snippet, 1));
 $modx->log(1, print_r($tpl, 1));
 $modx->log(1, print_r($id, 1));
+$modx->log(1, print_r($tv, 1));
+$modx->log(1, print_r($parents, 1));
 
 
 switch ($action) {
@@ -35,8 +39,8 @@ switch ($action) {
         $runParams = array(
            'resources' => $id,
            'chunk' => $tpl,
-           'includeTVs' => 'TechImage',
-           'parents' => '1',
+           'includeTVs' => $tv,
+           'parents' => $parents,
            'tpl' => $tpl,
            'includeContent' => '1'
         );
