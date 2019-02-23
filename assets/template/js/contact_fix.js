@@ -12,9 +12,7 @@
     }
     
     function  priceFixed(price_elem, product_cont, price_elem_offset, item) {
-        console.log(price_elem_offset);
         var scroll = $(item).scrollTop();
-        console.log(scroll);
         if (scroll >= price_elem_offset) {
             price_elem.addClass('fixed');
         }
