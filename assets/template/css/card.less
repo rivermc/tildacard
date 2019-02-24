@@ -4,8 +4,11 @@
 //-------------------------------------------------------------------------//
 
 .mfp-content {
-  max-width: 90%;  
+  max-width: 95%;  
 }
+/*.mfp-wrap {
+  top: 0 !important;
+}*/
 .card_popup {
   .animation();
   opacity: 0;
@@ -15,19 +18,29 @@
   background: @colorWhite;
   margin: 20px auto;
   
+  @media @m {
+    margin: 10px auto;
+  }
+  
   & .container_popup {
     max-width: 100%;
   }
   
   & .close_button_popup {
     position: fixed;
-    right: 35px;
+    right: 22px;
+    top: 10px;
     cursor: pointer;
+    z-index: 999;
+    
+    @media @m {
+      right: 15px;
+    }
     
     & img {
       .animation();
-      height: 30px;
-      width: 30px;
+      height: 20px;
+      width: 20px;
       
       &:hover {
         transform: scale(1.2, 1.2);
@@ -41,12 +54,20 @@
 
       & .product__item_top {
         .flex();
-        justify-content: space-beetwen;
+        justify-content: space-between;
         margin-bottom: 20px;
+
+        @media @m {
+          margin-bottom: 10px;
+        }
         
 
         & .item_top_left {
           .cols(14);
+          
+          @media @t, @m {
+            .cols(16);
+          }
 
           & h2 {
             font-size: 20pt;
@@ -56,23 +77,75 @@
             font-weight: 100;
             margin-bottom: 10px;
             padding-bottom: 4px;
+            
+            @media @d {
+              font-size: 16pt;
+            }
+            @media @t {
+              font-size: 14pt;
+            }
+            @media @m {
+              font-size: 12pt;
+            }
           }
 
           & p {
             font-size: 14pt;
+            
+            @media @d {
+              font-size: 12pt;
+            }
+            @media @t {
+              font-size: 10pt;
+            }
+            @media @m {
+              font-size: 8pt;
+            }
+            
           }
         }
 
         & .item_top_right {
           .cols(2);
+          
+          @media @t, @m {
+            .cols(16);
+            .flex();
+            justify-content: space-between;
+          }
 
           & p {
             text-align: right;
             font-size: 14pt;
             
+            @media @t {
+              .cols(8);
+              font-size: 11pt;
+              margin-top: 5px;
+            }
+            @media @m {
+              .cols(8);
+              font-size: 10pt;
+              margin-top: 5px;
+            }
+            
             &:first-child {
               margin-bottom: 10px;
               padding-bottom: 6px;
+              
+              @media @d {
+                padding-bottom: 0;
+              }
+              @media @t {
+                text-align: left;
+                margin-bottom: 0;
+                padding-bottom: 0;
+              }
+              @media @m {
+                text-align: left;
+                margin-bottom: 0;
+                padding-bottom: 0;
+              }
             }
           }
         }
@@ -80,6 +153,10 @@
 
       & .product__item_img {
         margin: 20px 0;
+
+        @media @m {
+          margin: 10px 0;
+        }
 
         & .msGallery {
           .flex();
@@ -112,6 +189,10 @@
 
         & .item_content_left {
           .cols(10);
+          
+          @media @t, @m {
+            .cols(16);
+          }
 
           & .item_content_description {
 
@@ -119,6 +200,13 @@
               font-size: 12pt;
               line-height: 1.4em;
               margin-bottom: 10px;
+              
+              @media @t {
+                font-size: 10pt;
+              }
+              @media @m {
+                font-size: 8pt;
+              }
             }
             & h2, h3, h4 {
               font-size: 14pt;
@@ -127,11 +215,22 @@
               font-weight: 100;
               margin-bottom: 14px;
               padding-bottom: 4px;
+              
+              @media @t {
+                font-size: 12pt;
+              }
+              @media @m {
+                font-size: 10pt;
+              }
             }
           }
 
           & .item_content_tech {
             margin: 20px 0;
+            
+            @media @m {
+              margin: 10px 0;
+            }
             
             & h3 {
               font-size: 14pt;
@@ -139,7 +238,14 @@
               border-bottom: 2px solid @colorBlack;
               font-weight: 100;
               margin-bottom: 14px;
-              padding-bottom: 4px;              
+              padding-bottom: 4px;
+              
+              @media @t {
+                font-size: 12pt;
+              } 
+              @media @m {
+                font-size: 10pt;
+              }            
             }
 
             & img {
@@ -149,6 +255,10 @@
 
           & .item_content_maps {
             margin: 20px 0;
+            
+            @media @m {
+              margin: 10px 0;
+            }
 
             & h3 {
               font-size: 14pt;
@@ -157,15 +267,33 @@
               font-weight: 100;
               margin-bottom: 14px;
               padding-bottom: 4px;
+              
+              @media @t {
+                font-size: 12pt;
+              }
+              @media @m {
+                font-size: 10pt;
+              }
             }
             #map {
               height: 300px;
+              
+              @media @t {
+                height: 250px;
+              }
+              @media @m {
+                height: 200px;
+              }
             }
           }
         }
 
         & .item_content_right {
           .cols(5.5);
+          
+          @media @t, @m {
+            .cols(16);
+          }
 
           & .sticky_block {
             position: relative;
@@ -181,6 +309,15 @@
               padding: 20px;
               box-shadow: 5px 5px 30px -5px @colorBlack;
               max-width: 390px;
+              
+              @media @d {
+                max-width: 280px;
+              }
+              
+              @media @t, @m {
+                max-width: none;
+                padding: 10px;
+              }
 
               & h3 {
                 font-size: 14pt;
@@ -189,6 +326,10 @@
                 font-weight: 100;
                 margin-bottom: 14px;
                 padding-bottom: 4px;
+                
+                @media @d, @t, @m {
+                  font-size: 12pt;
+                }
               }
 
               & .item_content_price {
@@ -199,6 +340,10 @@
                 & p {
                   font-size: 14pt;
                   position: relative;
+
+                  @media @t, @m {
+                    font-size: 12pt;
+                  }
                   
                   &.new_price {
 
@@ -219,11 +364,8 @@
                       transform: rotate(-5deg);
                       height: 2px;
                     }
-
-                  }
-                  
+                  }                  
                 }
-
               }
 
               & .item_content_form {
@@ -234,6 +376,10 @@
                 
                 & .title {
                   font-size: 12pt;
+                  
+                  @media @t, @m {
+                    font-size: 10pt;
+                  }
                 }
               }
             }

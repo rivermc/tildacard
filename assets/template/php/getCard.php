@@ -19,14 +19,14 @@ $modx->getRequest();
 $modx->setLogLevel(modX::LOG_LEVEL_ERROR);
 $modx->setLogTarget('FILE');
 $modx->error->message = null;
-
+/*
 $modx->log(1, print_r($action, 1));
 $modx->log(1, print_r($snippet, 1));
 $modx->log(1, print_r($tpl, 1));
 $modx->log(1, print_r($id, 1));
 $modx->log(1, print_r($tv, 1));
 $modx->log(1, print_r($parents, 1));
-
+*/
 
 switch ($action) {
     case 'getCard':
@@ -45,7 +45,7 @@ switch ($action) {
            'includeContent' => '1'
         );
         
-        $modx->log(1, print_r($runParams, 1));
+        //$modx->log(1, print_r($runParams, 1));
                
         $output = $modx->runSnippet($snippet, $runParams);
         

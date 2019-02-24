@@ -1,3 +1,14 @@
+
+function MobileDetect() {
+    var width = $(window).width();
+    if (width < 992) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 class PopupCard {
 
     constructor() {
@@ -29,17 +40,20 @@ class PopupCard {
 
                 },
                 open: function() {
-                    $('html').css('overflow', 'hidden');
+                    $('html, body').css({'overflow': 'hidden'});
                     setTimeout(function(){
                         $('.card_popup').css('opacity', 1);
                         miniShop2.Gallery.initialize();
-                        stickyInit();
+                        var isMobile = MobileDetect();
+                        if (!isMobile) {
+                            stickyInit();                            
+                        }
                         ymaps.ready(cityGeocode($('#map').data('address')));
                     },1000);
                 },
                 close: function() {
                     $('.card_popup').css('opacity', 0).html('');
-                    $('html').css('overflow', 'auto');
+                    $('html, body').css({'overflow': 'auto'});
                 }
             }
         });
