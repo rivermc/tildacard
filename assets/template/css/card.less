@@ -83,9 +83,26 @@
 
         & .msGallery {
           .flex();
-          max-height: 420px;
-          overflow: hidden;
-          align-items: center;          
+          align-items: center;
+          
+          & .fotorama__nav__frame {
+
+            & .fotorama__dot {
+              border: 2px solid @colorBlue;
+              width: 10px;
+              height: 10px;
+              position: relative;
+              top: 10px;
+              left: 4px;
+              border-radius: 6px;
+            }
+            
+            &.fotorama__active {
+              & .fotorama__dot {
+                background: @colorBlue;
+              }
+            }            
+          }          
         }
       }
 
@@ -106,11 +123,24 @@
             & h2, h3, h4 {
               font-size: 14pt;
               text-transform: uppercase;
-              margin-bottom: 20px;
+              border-bottom: 2px solid @colorBlack;
+              font-weight: 100;
+              margin-bottom: 14px;
+              padding-bottom: 4px;
             }
           }
 
           & .item_content_tech {
+            margin: 20px 0;
+            
+            & h3 {
+              font-size: 14pt;
+              text-transform: uppercase;
+              border-bottom: 2px solid @colorBlack;
+              font-weight: 100;
+              margin-bottom: 14px;
+              padding-bottom: 4px;              
+            }
 
             & img {
 
@@ -118,7 +148,19 @@
           }
 
           & .item_content_maps {
+            margin: 20px 0;
 
+            & h3 {
+              font-size: 14pt;
+              text-transform: uppercase;
+              border-bottom: 2px solid @colorBlack;
+              font-weight: 100;
+              margin-bottom: 14px;
+              padding-bottom: 4px;
+            }
+            #map {
+              height: 300px;
+            }
           }
         }
 
@@ -138,7 +180,7 @@
               background: @colorBlue;
               padding: 20px;
               box-shadow: 5px 5px 30px -5px @colorBlack;
-              max-width: 360px;
+              max-width: 390px;
 
               & h3 {
                 font-size: 14pt;
@@ -186,39 +228,6 @@
 
               & .item_content_form {
                 margin: 20px 0;
-
-                & form {
-
-                  & input {
-                    color: @colorBlack;
-                    border: 0;
-                    padding: 14px;
-                    width: 100%;
-                    margin: 0 0 10px 0;
-                    border-radius: 20px;
-                    font-size: 11pt;
-                  }
-
-                  & button {
-                    .animation();
-                    background: @colorRed;
-                    color: @colorWhite;
-                    padding: 10px 25px 8px;
-                    display: table;
-                    margin: 0 auto;
-                    font-size: 13pt;
-                    border: 0;
-                    border-radius: 20px;
-                    text-transform: uppercase;
-                    cursor: pointer;
-
-                    &:hover {
-                      background: @colorBlack;
-                      color: @colorWhite;
-                    }
-
-                  }
-                }
               }
 
               & .item_content_messenger {

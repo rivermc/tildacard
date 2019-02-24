@@ -21,7 +21,7 @@ class PopupCard {
                             parents: 1,
                             id: itemID,
                             tpl: 'Item',
-                            tv: 'TechImage, Widget'
+                            tv: 'TechImage, Widget, Maps'
                         },
                         function(response) {
                             //console.log('getCard response: ' + response);
@@ -34,6 +34,7 @@ class PopupCard {
                         $('.card_popup').css('opacity', 1);
                         miniShop2.Gallery.initialize();
                         stickyInit();
+                        ymaps.ready(cityGeocode($('#map').data('address')));
                     },1000);
                 },
                 close: function() {

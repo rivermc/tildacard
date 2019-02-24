@@ -44,10 +44,12 @@
                             <p>[[+content]]</p>
                         </div>
                         <div class="item_content_tech">
+                            <h3>Характеристики</h3>
                             <img src="[[+TechImage]]" alt="Технические характеристики дома">
                         </div>
                         <div class="item_content_maps">
-                            [[+MapsImage]]
+                            <h3>Карта</h3>
+                            <div id="map" data-address="[[+Maps]]"></div>
                         </div>
                     </div>
                     <div class="item_content_right">
@@ -59,10 +61,7 @@
                                     <p class="old_price">[[+old_price]] <span>&euro;</span></p>
                                 </div>
                                 <div class="item_content_form">
-                                    <form action="post">
-                                        <input type="email" name="email" placeholder="Ваш E-mail" class="input_name"> 
-                                        <button type="submit" class="button_submit">Заказать звонок</button>
-                                    </form>
+                                    [[$Callback]]
                                 </div>
                                 <div class="item_content_messenger">
                                     <p class="title">или запросить презентацию похожих объектов в мессенджер</p>
