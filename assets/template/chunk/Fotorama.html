@@ -3,7 +3,12 @@
     <div class="fotorama"
          data-allowfullscreen="false"
          data-swipe="true"
-         data-nav="dots">
+         data-maxwidth="100%"
+         data-fit='cover'
+         data-maxheight="400px"
+         data-ratio='16/9'
+         data-nav="dots"
+    >
         {foreach $files as $file}
             <a href="{$file['url']}" target="_blank">
                 <img src="{$file['small']}" alt="[[+pagetitle]]" title="[[+pagetitle]]">
