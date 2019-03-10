@@ -1,27 +1,51 @@
+
+
 <div class="catalog__main_wrap">
     [[+pagetitle]]
-    <div id="pdopage" class="pdopage">
-        <div class="rows">
-            [[!pdoPage?=
-                &element=`msProducts`
-                &parents=`1`
-                &limit=`6`
-                &ajaxMode = `default`
-                &includeTVs = `MetaDescription`
-                &tpl = `CatalogItem`
-                &tplPageWrapper = `@INLINE <div class="pagination"><ul>[[+first]][[+prev]][[+pages]][[+next]][[+last]]</ul></div>`
-                &tplPageFirst = `@INLINE <li class="control prev first"><a class="nopreload" href="[[+href]]">Первая</a></li>`
-                &tplPageLast = `@INLINE <li class="control next last"><a  class="nopreload" href="[[+href]]">Последняя</a></li>`
-                &tplPage = `@INLINE <li><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
-                &tplPageActive = `@INLINE <li class="active"><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
-                &tplPagePrev = `@INLINE <li class="control prev"><a class="nopreload" href="[[+href]]">Назад</a></li>`
-                &tplPageNext = `@INLINE <li class="control next"><a  class="nopreload" href="[[+href]]">Вперед</a></li>`
-                &tplPageNextEmpty = `@INLINE `
-                &tplPagePrevEmpty = `@INLINE `
-                &tplPageFirstEmpty = `@INLINE `
-            ]]
-        </div>
-        [[!+page.nav]]
-    </div>
+
+    [[!mFilter2?
+        &tpl=`CatalogItem`
+        &element=`msProducts`
+        &limit = `15`
+        &tplOuter = `mFilterOut`
+        &parents=`0`
+        &filters=`
+            msoption|code,
+            msoption|category,
+            msoption|city,
+            ms|price:number,
+            msoption|square:number
+        `
+        &aliases=`
+            msoption|code==code,
+            msoption|city==city,
+            msoption|category==category,
+            ms|price==price,
+            msoption|square==square
+        `
+        
+        &tplFilter.outer.price=`mFilterSlider`
+        &tplFilter.row.price=`mFilterNumber`
+        &tplFilter.outer.square=`mFilterSlider`
+        &tplFilter.row.square=`mFilterNumber`
+        &tplFilter.outer.category=`tpl.mFilter2.filter.select`
+        &tplFilter.row.category=`tpl.mFilter2.filter.option`
+        &tplFilter.outer.city=`tpl.mFilter2.filter.select`
+        &tplFilter.row.city=`tpl.mFilter2.filter.option`
+        &tplFilter.outer.code=`tpl.mFilter2.filter.select`
+        &tplFilter.row.code=`tpl.mFilter2.filter.option`
+    
+        &tplPageWrapper = `@INLINE <div class="pagination"><ul>[[+first]][[+prev]][[+pages]][[+next]][[+last]]</ul></div>`
+        &tplPageFirst = `@INLINE <li class="control prev first"><a class="nopreload" href="[[+href]]">Первая</a></li>`
+        &tplPageLast = `@INLINE <li class="control next last"><a  class="nopreload" href="[[+href]]">Последняя</a></li>`
+        &tplPage = `@INLINE <li><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
+        &tplPageActive = `@INLINE <li class="active"><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
+        &tplPagePrev = `@INLINE <li class="control prev"><a class="nopreload" href="[[+href]]">Назад</a></li>`
+        &tplPageNext = `@INLINE <li class="control next"><a  class="nopreload" href="[[+href]]">Вперед</a></li>`
+        &tplPageNextEmpty = `@INLINE `
+        &tplPagePrevEmpty = `@INLINE `
+        &tplPageFirstEmpty = `@INLINE `
+    ]]
+    
 </div>
 <div class="card_popup" id="card_popup"></div>

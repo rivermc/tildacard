@@ -10,20 +10,12 @@ $(document).ready(function() {
     });
 
 
-    // ajax page reload plugin js init
-    pdoPage.callbacks['before'] = function() {
-        console.log('Конфиг перед загрузкой!');
-        $('#pdopage .rows').css({'opacity': 0});
-    };
-    
-    pdoPage.callbacks['after'] = function() {
-        console.log('Конфиг после загрузки!');
+    $(document).on('mse2_load', function(e, data) {
+        console.log(e, data);
         popupcard =  new PopupCard();
         popupcard.getPopup();
         miniShop2.Gallery.initialize();
         $('#pdopage .rows').css({'opacity': 1});
         $(window).scrollTop(0);
-    };
-    
-
+    });
 });
