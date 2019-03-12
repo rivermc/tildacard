@@ -1,6 +1,8 @@
 <fieldset id="mse2_[[+table]][[+delimeter]][[+filter]]">
-    <h4 class="filter_title">[[%mse2_filter_[[+table]]_[[+filter]]]]</h4>
-    <input class="autocomplete" name="code" id="[[+table]][[+delimeter]][[+filter]]">
+    <div class="prop_title">
+        <p>[[%mse2_filter_[[+filter]]]]:</p>
+    </div>
+    <input class="autocomplete" name="[[+filter_key]]" value="" data-current-value="" id="[[+table]][[+delimeter]][[+filter]]">
     <div class="autocomplete_options">
         [[+rows]]
     </div>

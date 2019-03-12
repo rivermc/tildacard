@@ -9,9 +9,8 @@ $(document).ready(function() {
         $.magnificPopup.close();
     });
 
-
+    // filter load 
     $(document).on('mse2_load', function(e, data) {
-        console.log(e, data);
         popupcard =  new PopupCard();
         popupcard.getPopup();
         miniShop2.Gallery.initialize();
@@ -19,13 +18,22 @@ $(document).ready(function() {
         $(window).scrollTop(0);
     });
 
-    var complete_option = $('.autocomplete_options').text().trim();
 
-    var str = complete_option;
-    var res = str.split(",");
-    console.log(res);
-    
-    $( ".autocomplete" ).autocomplete({
+    // filter autocomplete code input 
+    var complete_option = $('.autocomplete_options').text().trim();
+    var res = complete_option.split(",");
+   $('.autocomplete').autocomplete({
         source: res
     });
+    /* $('select[name=category], select[name=city]').selectmenu({
+        change: function( event, ui ) {
+            mSearch2.submit();
+        }
+    }); */
+
+    $('.filter_reset').click(function(){
+        $('.autocomplete').val('');
+    });
+
+
 });

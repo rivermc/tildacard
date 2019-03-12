@@ -1,0 +1,191 @@
+.ui-menu {
+  border: 1px solid @colorBlue;
+  font-family: @fontGeom;
+  background: @colorWhite;
+  border-radius: 5px;
+  font-size: 8pt;
+  text-transform: uppercase;
+  padding: 7px 5px 5px;
+    
+    & li {
+      text-transform: uppercase;
+      font-size: 8pt;
+    }
+}
+
+& .msearch2 {
+
+  & .catalog_filter {
+    background: @colorBlue;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+
+    & .filter {
+
+      & #mse2_filters {
+        .flex();
+        justify-content: space-around;
+        align-items: center;
+
+        & fieldset {
+          .cols(5);
+          border: 0;
+          margin-bottom: 20px;
+          
+          @media @m {
+            .cols(16);
+          }
+        }
+
+        & .prop_title {
+
+          & p {
+            font-size: 13pt;
+            text-transform: uppercase;
+            font-weight: 100;
+          }
+        }
+
+        & fieldset.disabled_fieldsets {
+
+          & input.autocomplete {
+            .cols(16);
+            border: 0;
+            padding: 5px;
+            border-radius: 5px;
+            height: 28px;
+          }
+
+          & .autocomplete_options {
+            display: none;
+          }
+          
+          & select {
+            font-family: @fontGeom;
+            background: @colorWhite;
+            width: 100%;
+            border: 0;
+            border-radius: 5px;
+            font-size: 8pt;
+            text-transform: uppercase;
+            padding: 7px 5px 5px;
+            height: 28px;
+            
+          }
+        }
+
+        & fieldset.filter_price {
+
+          & .filter_price_top {
+
+
+            & .mse2_number_slider {
+              width: ~'calc(100% - 20px)';
+              border: 1px solid @colorBlack;
+              margin: 10px;
+              font-size: 12pt;
+
+              & .ui-slider-range {
+                background: @colorBlack;
+              }
+
+              & span {
+                .animation();
+                border: 4px solid @colorBlack;
+                cursor: pointer;
+                
+                @media @m {
+                  display: none;
+                }
+
+                &:hover {
+                  border: 4px solid @colorBlue;
+                  background: @colorWhite;
+                }
+                &.ui-state-active {
+                  background: @colorBlack;
+                  &:hover {
+                    background: @colorBlack;
+                  }
+                }
+              }
+            }
+          }
+
+          & .mse2_number_inputs {
+            .flex();
+            align-items: center;
+            justify-content: space-between;
+
+            & label {
+              .cols(7);
+              .flex();
+              align-items: center;
+
+              & p {
+                margin-right: 20px;
+                font-size: 9pt;
+                text-transform: uppercase;
+                font-weight: 100;
+
+              }
+
+              & input.form-control {
+                width: ~'calc(100% - 40px)';
+                border: 0;
+                padding: 5px;
+                border-radius: 5px;
+                height: 28px;    
+              }
+            }
+          }
+        }
+
+        & #mse2_sort {
+          .cols(5);
+          display: block !important;
+
+          @media @m {
+            .cols(16);
+          }
+
+          & p.total_result {
+            font-size: 10pt;
+            text-align: center;
+            text-transform: uppercase;
+            display: block !important;
+
+            & #mse2_total {
+              font-family: @fontGeomBold;
+            }
+          }
+
+          & button.filter_reset {
+            .animation();
+            background: @colorBlue;
+            border: 1px solid @colorBlack;
+            color: @colorBlack;
+            padding: 3px 15px 2px;
+            display: table;
+            font-size: 10pt;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin: 10px auto;
+            height: 28px;
+
+            @media @m {
+              font-size: 10pt;
+            }
+
+            &:hover {
+              background: @colorBlack;
+              color: @colorBlue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
