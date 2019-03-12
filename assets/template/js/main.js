@@ -18,4 +18,14 @@ $(document).ready(function() {
         $('#pdopage .rows').css({'opacity': 1});
         $(window).scrollTop(0);
     });
+
+    var complete_option = $('.autocomplete_options').text().trim();
+
+    var str = complete_option;
+    var res = str.split(",");
+    console.log(res);
+    
+    $( ".autocomplete" ).autocomplete({
+        source: res
+    });
 });
