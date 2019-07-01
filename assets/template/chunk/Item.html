@@ -57,15 +57,23 @@
                             <div class="item_content_contact">
                                 <h3>[[+pagetitle]]</h3>
                                 <div class="item_content_price">
-                                    <p class="new_price">[[+price]] <span>&euro;</span></p>
-                                    <p class="old_price">[[+old_price]] <span>&euro;</span></p>
+                                [[+old_price:isnot=`0`:then=`
+                                        <p class="new_price">[[+price]] <span>&euro;</span></p>
+                                    
+                                        <p class="old_price">[[+old_price]] <span>&euro;</span></p>
+                                    
+                                `:else=`
+                                        <p class="new_price full">[[+price]] <span>&euro;</span></p>
+                                `]]
                                 </div>
                                 <div class="item_content_form">
                                     [[$Callback]]
                                 </div>
                                 <div class="item_content_messenger">
                                     <p class="title">или запросить презентацию похожих объектов в мессенджер</p>
-                                    [[+Widget]]
+                                    <script src="//unpkg.com/@textback/notification-widget@latest/build/index.js"></script>
+<tb-notification-widget  widget-id="3a0c4a08-417f-dee6-d864-016a6fd1b2e2">
+</tb-notification-widget>
                                 </div>
                             </div>
                         </div>

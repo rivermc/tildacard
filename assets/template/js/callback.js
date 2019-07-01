@@ -4,19 +4,20 @@ $(document).ready(function(){
 /* SendForm */
 /* ----------------------------------------------------------------------- */
 
-  function sendForm(idForm) {
-    var msg=$('#' + idForm).serialize();
+  function sendForm(IDForm) {
+    var msg=$('#' + IDForm).serialize();
     $.ajax({
       type:'POST',
       url:"/assets/template/php/sendForm.php",
       data:msg,
       cache:false,
       beforeSend: function() {
-        $('#' + idForm + ' button').prop('disabled', true);
+        $('#' + IDForm + ' button').prop('disabled', true);
       },
       success:function(data) {
+        console.log(data);
         callback(data);
-        $('#' + idForm + ' button').prop('disabled', false);
+        $('#' + IDForm + ' button').prop('disabled', false);
       }
     });
   }
@@ -25,7 +26,7 @@ $(document).ready(function(){
   function callback(check) {
   
     if (check == 'true') {
-      $('.form__callback_error').html('<p>Спасибо! Ваша заявка отправлена!</p><p>Наш менеджер свяжется с Вами в ближайшее время</p>');
+      $('.form__callback_error').html('<p>Спасибо! Мы подготовим для вас подборку домов и пришлем в течение дня!</p>');
       $('.callback__form').hide().delay(8000).queue(function(next) {
         $('.callback__form').show(500);
         $('.form__callback_error').empty();
@@ -38,6 +39,10 @@ $(document).ready(function(){
   function isEmail(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
+  }
+  function isPhone(phone) {
+    var regex = /^\+?([\d]{1})\)?[- ]*[( ]*?([\d]{3})?[) ]*[- ]?([\d]{3})[- ]?([\d]{2})[- ]?([\d]{2})$/;
+    return regex.test(phone);
   }
 
 /* ----------------------------------------------------------------------- */

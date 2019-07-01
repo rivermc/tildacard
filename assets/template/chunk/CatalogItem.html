@@ -32,12 +32,18 @@
         <p>[[+MetaDescription]]</p>
     </div>
     <div class="main__item_price">
-        <div class="old_price">
-            <p>[[+old_price]] <span>&euro;</span></p>
-        </div>
-        <div class="new_price">
-            <p>[[+price]] <span>&euro;</span></p>
-        </div>
+        [[+old_price:isnot=`0`:then=`
+            <div class="old_price">
+                <p>[[+old_price]] <span>&euro;</span></p>
+            </div>
+            <div class="new_price">
+                <p>[[+price]] <span>&euro;</span></p>
+            </div>
+        `:else=`
+            <div class="new_price full">
+                <p>[[+price]] <span>&euro;</span></p>
+            </div>
+        `]]
     </div>
     <div class="main__item_link">
         <a href="#card_popup" class="popup-btn nopreload" title='[[+pagetitle]]' id="house-[[+id]]" data-id="[[+id]]">Подробнее</a>
