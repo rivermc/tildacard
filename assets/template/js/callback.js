@@ -15,9 +15,12 @@ $(document).ready(function(){
         $('#' + IDForm + ' button').prop('disabled', true);
       },
       success:function(data) {
-        console.log(data);
         callback(data);
         $('#' + IDForm + ' button').prop('disabled', false);
+      },
+      error: function(response) {
+        console.log('error send mail');
+        console.log(response);
       }
     });
   }
@@ -25,8 +28,8 @@ $(document).ready(function(){
 
   function callback(check) {
   
-    if (check == 'true') {
-      $('.form__callback_error').html('<p>Спасибо! Мы подготовим для вас подборку домов и пришлем в течение дня!</p>');
+    if (check === 'true') {
+      $('.form__callback_error').html('<p>Спасибо! Мы подготовим для вас подборку домов и позвоним в течение дня!</p>');
       $('.callback__form').hide().delay(8000).queue(function(next) {
         $('.callback__form').show(500);
         $('.form__callback_error').empty();
@@ -56,17 +59,22 @@ $(document).ready(function(){
     var test = false;
     
     $(inputs).each(function(index, item) {
-      if ($(item).attr('name') == 'email') {
-        var value = $(item).val();
+      var value;
+      if ($(item).attr('name') === 'email') {
+        value = $(item).val();
         test = isEmail(value);
       }
-      
-      if (test == false) {
+      if ($(item).attr('name') === 'phone') {
+        value = $(item).val();
+        test = isPhone(value);
+      }
+      console.log(test);
+      if (test === false) {
         $('.callback__form' + ' .callback__form_input_' + $(item).attr('name')).addClass('shake').delay(800).queue(function(next){ $('.callback__form .callback__form_input_' + $(item).attr('name')).removeClass('shake');  next(); });
       }
     });
     
-    if (test == true) {
+    if (test === true) {
       sendForm(FormId);      
     }
   });
@@ -81,7 +89,7 @@ $(document).ready(function(){
   
   $(document).on('blur', '.callback__form_input', function(){
     var inputValue = $(this).val();
-    if ( (inputValue == "")) {
+    if ( (inputValue === "")) {
       $(this).removeClass('filled');
       $(this).parents('.form__callback_form-group').removeClass('focused');
     } else {
@@ -89,5 +97,25 @@ $(document).ready(function(){
     }
   });
 
+
+
+    $('.popup_btn').magnificPopup({
+        type: 'inline',
+        preloader: false,
+
+        callbacks:  {
+          beforeOpen: function() {
+
+          },
+          open: function() {
+            $('html, body').css({'overflow': 'hidden'});
+            $('header').css({'padding-right': '15px'});
+          },
+          close: function() {
+            $('html, body').css({'overflow': 'auto'});
+            $('header').css({'padding-right': '0'});
+          }
+        }
+      });
 
 });

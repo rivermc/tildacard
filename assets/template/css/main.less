@@ -1,5 +1,6 @@
 html {
   overflow-x: hidden;
+  min-width: 320px;
 
   &.noscroll {
     overflow: hidden;
@@ -9,7 +10,14 @@ html {
 body {
   font-family: @fontGeom;
   overflow-x: hidden;
-  &::-webkit-scrollbar {
-    width: 0px;
+  padding-top: 80px;
+
+  @media @t, @m {
+    padding-top: 0;
   }
+}
+
+.mfp-wrap {
+  top: 70px !important;
+  z-index: 99999 !important;
 }

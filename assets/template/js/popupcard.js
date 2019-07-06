@@ -44,10 +44,14 @@ class PopupCard {
                     setTimeout(function(){
                         $('.card_popup').css('opacity', 1);
                         miniShop2.Gallery.initialize();
+                        /*
                         var isMobile = MobileDetect();
                         if (!isMobile) {
                             stickyInit();                            
                         }
+                        */
+
+                        $('input[name=phone]').usPhoneFormat({format: 'x-xxx-xxx-xxxx'});
                         ymaps.ready(cityGeocode($('#map').data('address')));
                     },1000);
                 },

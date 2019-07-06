@@ -35,5 +35,18 @@ $(document).ready(function() {
         $('.autocomplete').val('');
     });
 
+    $('input[name=phone]').usPhoneFormat({format: 'x-xxx-xxx-xxxx'});
+
+
+    $('.burger_menu_button').click(function(){
+        if ($(this).hasClass('active')) {
+            $(this).toggleClass('active', false);
+            $('header').slideUp(400);
+        }
+        else {
+            $(this).toggleClass('active', true);
+            $('header').slideDown(400);
+        }
+    });
 
 });
